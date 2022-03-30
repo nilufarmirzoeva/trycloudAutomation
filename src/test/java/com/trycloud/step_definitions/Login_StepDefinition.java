@@ -4,7 +4,7 @@ import com.trycloud.pages.LoginPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 
-public class Login_StepDef {
+public class Login_StepDefinition {
 
     LoginPage loginPage = new LoginPage();
 
