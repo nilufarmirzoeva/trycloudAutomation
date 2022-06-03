@@ -28,4 +28,5 @@ public class LoginPage {
         passwordInput.sendKeys(password);
         logInButton.click();
     }
+
 }
