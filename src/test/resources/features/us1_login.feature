@@ -4,8 +4,9 @@ Feature: TryCloud app login feature
   @login
   Scenario Outline: Verify login with valid credentials
     Given user on the login page
-    And user use username "<username>" and password "<password>" and click login
-
+    And user use username "<username>" and password "<password>"
+    When user click the login button
+    Then verify the user should be at the dashboard page
     Examples:
       | username | password    |
       | User2    | Userpass123 |
