@@ -15,19 +15,19 @@ public class DashboardPage {
     public DashboardPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
-    @FindBy(xpath = "//ul[@id='appmenu']//span")
-    public List<WebElement> allMainModules;
+    @FindBy(xpath = "//ul[@id='appmenu']//li[@id='more-apps']//preceding-sibling::li")
+    public List<WebElement> modules;
 
+  public List<String> getTextOfModules(){
+      List <String> moduleTexts = new ArrayList<>();
 
-    public List<String> getTextOfModules() {
-        List<String> moduleTexts = new ArrayList<>();
+      for (WebElement module : modules) {
+           BrowserUtils.hover(module);
+           BrowserUtils.sleep(1);
+           moduleTexts.add(module.getText());
+      }
+      return moduleTexts;
+  }
 
-        for (WebElement module : allMainModules) {
-
-            BrowserUtils.sleep(1);
-            moduleTexts.add(module.getText());
-        }
-        return moduleTexts;
-    }
 
 }
