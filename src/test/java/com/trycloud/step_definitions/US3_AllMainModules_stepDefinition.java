@@ -28,8 +28,8 @@ public class US3_AllMainModules_stepDefinition {
 
     @Then("Verify the user see the following modules:")
     public void verify_the_user_see_the_following_modules(List<String> expectedModules) {
-        List<String> actualModules = new ArrayList<>();
-        dashboardPage.allMainModules.forEach(p->actualModules.add(p.getText()));
-        Assert.assertEquals(expectedModules, actualModules);
+       List<String> actualModules = dashboardPage.getTextOfModules();
+
+       Assert.assertEquals(expectedModules,actualModules);
     }
 }
